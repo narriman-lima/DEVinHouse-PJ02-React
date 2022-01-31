@@ -7,6 +7,11 @@ const GameCardStyle = styled.article`
       backgroundColor: primary ? theme.colors.secondary.main : theme.colors.primary.main,
    })}
    width: 250px;
+   transition: all .2s ease-in-out;
+
+   &:hover {
+      transform: scale(1.1);
+   }
    img{
       width: 250px;
    }
@@ -19,12 +24,6 @@ const GameCardStyle = styled.article`
    `
 const GameCardContent = styled.div`
    padding: 10px;
-`
-
-const GameCardHeader = styled.div`
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 10px;
 `
 
  const StyledLink  = styled(Link)`
@@ -43,12 +42,10 @@ export const GameCard = (props) => {
         <GameCardStyle>
             <img src={thumbnail} alt="test"/>
             <GameCardContent>
-               <GameCardHeader>
-                  <h3>{title}</h3>
-                  <span>{platform}</span>
-                </GameCardHeader>
-            <p>{short_description}</p>
-            <StyledLink  to={`game/detail/${id}`}>Ver mais</StyledLink>
+               <h3>{title}</h3>
+               <span>{platform}</span>
+               <p>{short_description}</p>
+               <StyledLink  to={`game/detail/${id}`}>Ver mais</StyledLink>
             </GameCardContent>
         </GameCardStyle>
     )
