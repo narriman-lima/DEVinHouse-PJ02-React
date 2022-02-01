@@ -4,11 +4,24 @@ import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import styled from 'styled-components';
+import { GameForm } from "../Form/GameForm";
 
 const CarouselWrapper = styled.div`
    width: 1050px;
    margin: 0 auto;
 `
+const GameInfoStyle = styled.div`
+   width: 1050px;
+   margin: 0 auto;
+   h4, h5, p {
+      padding-top: 10px;
+   }
+   div {
+      border: solid 1px;
+   }
+
+`
+
 
 export const GameDetail = () => {
   const { id } = useParams();
@@ -51,29 +64,36 @@ export const GameDetail = () => {
                   ))}
             </Carousel>
           </CarouselWrapper>
-          <div>
-            <h4>Genre</h4>
-            <p>{gameInfo.genre}</p>
-            <h4>Platform</h4>
-            <p>{gameInfo.platform}</p>
-          </div>
-          <h4>Descrição</h4>
-          <p dangerouslySetInnerHTML={{ __html: gameInfo.description }}></p>
-          <div>
-            <h4>Requisitos do Sitema</h4>
-            <h5>Sistema Operacional</h5>
-            <p>{gameInfo.minimum_system_requirements.os}</p>
-            <h5>Processador</h5>
-            <p>{gameInfo.minimum_system_requirements.processor}</p>
-            <h5>Memória</h5>
-            <p>{gameInfo.minimum_system_requirements.memory}</p>
-            <h5>Gráficos</h5>
-            <p>{gameInfo.minimum_system_requirements.graphics}</p>
-            <h5>Espaço em Disco</h5>
-            <p>{gameInfo.minimum_system_requirements.storage}</p>
-          </div>
+
+          <GameInfoStyle>
+            <div>
+               <h4>Genre</h4>
+               <p>{gameInfo.genre}</p>
+               <h4>Platform</h4>
+               <p>{gameInfo.platform}</p>
+            </div>
+            <h4>Descrição</h4>
+            <p dangerouslySetInnerHTML={{ __html: gameInfo.description }}></p>
+            <br></br>
+            <div>
+               <h4>Requisitos do Sitema</h4>
+               <h5>Sistema Operacional</h5>
+               <p>{gameInfo.minimum_system_requirements.os}</p>
+               <h5>Processador</h5>
+               <p>{gameInfo.minimum_system_requirements.processor}</p>
+               <h5>Memória</h5>
+               <p>{gameInfo.minimum_system_requirements.memory}</p>
+               <h5>Gráficos</h5>
+               <p>{gameInfo.minimum_system_requirements.graphics}</p>
+               <h5>Espaço em Disco</h5>
+               <p>{gameInfo.minimum_system_requirements.storage}</p>
+            </div>
+          <GameForm />
+          </GameInfoStyle>
+         
         </section>
       )}
-    </>
+      </>
   );
 };
+
