@@ -1,34 +1,39 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
 import { NewsCard } from "../NewsCard/NewsCard";
+import { fetchGameNews } from "../../services/games-service";
+import { filterByText } from "../../helper/games";
 
 export const News = () => {
     const [news, setNews] = useState([]);
+    const [filteredNews, setFilteredNews] = useState([]);
+    const [filter, setFilter] = useState('');
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://mmo-games.p.rapidapi.com/latestnews',
-            headers: {
-              'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
-              'x-rapidapi-key': '8e65ae50e5mshfce3a1383ee5408p16661fjsnca8f01b4b471'
-            }
-          };
-          
-          axios.request(options).then((response) => {
-              setNews(response.data);
-          }).catch((error) => {
-              console.error(error);
-          });
+      (async () => {
+         const lista = await fetchGameNews();
+         setNews(lista);
+         setFilteredNews(lista);
+       })();
     }, []);
 
+    useEffect(() => {
+      setFilteredNews(filterByText(news, filter));
+    }, [filter]);
 
     return (
         <>
+            <input
+               onChange={(event) => {
+                  setFilter(event.target.value);
+               }}
+               type="text"
+               placeholder="Digite o nome do jogo"
+               />
             <section>
-                {news.length > 0 && news.map(notice => (
+                {filteredNews.length > 0 && filteredNews.map(notice => (
                     <NewsCard key={notice.id} notice={notice} />
                 ))}
+                {filteredNews.length === 0 && (<p>Nenhuma notícia encontrada</p>)}
             </section>
         </>
     )

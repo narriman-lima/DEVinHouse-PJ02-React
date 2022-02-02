@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
+
 import { GameCard } from "../GameCard/GameCard";
 import styled from 'styled-components';
+import { useGame } from "../../contexts/game/useGame";
+import { Search } from "../Search/Search";
 
 const GamesCardListWrapper = styled.section`
    display: flex;
@@ -12,35 +13,17 @@ const GamesCardListWrapper = styled.section`
 `;
 
 export const Games = () => {
-
-    const [gamesList, setGamesList] = useState([]);
-
-    useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://mmo-games.p.rapidapi.com/games',
-            headers: {
-              'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
-              'x-rapidapi-key': '8e65ae50e5mshfce3a1383ee5408p16661fjsnca8f01b4b471'
-            }
-          };
-          
-          axios.request(options).then(function (response) {
-              console.log(response.data);
-              setGamesList(response.data);
-          }).catch(function (error) {
-              console.error(error);
-          });
-    }, []);
+    const { filteredGames } = useGame();
     
-
     return (
         <>
             <h2>Games</h2>
+            <Search />
             <GamesCardListWrapper>
-                {gamesList.length > 0 && gamesList.map((game, index) => (
+                {filteredGames.length > 0 && filteredGames.map((game) => (
                     <GameCard key={game.id}  game={game}/>
                 ))}
+                {filteredGames.length === 0 && (<p>Nenhum jogo encontrado</p>)}
             </GamesCardListWrapper>
         </>
     )

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import styled from 'styled-components';
 import { GameForm } from "../Form/GameForm";
+import { fetchGameDetail } from "../../services/games-service";
 
 const CarouselWrapper = styled.div`
    width: 1050px;
@@ -28,24 +28,11 @@ export const GameDetail = () => {
   const [gameInfo, setgameInfo] = useState(null);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://mmo-games.p.rapidapi.com/game",
-      params: { id },
-      headers: {
-        "x-rapidapi-host": "mmo-games.p.rapidapi.com",
-        "x-rapidapi-key": "8e65ae50e5mshfce3a1383ee5408p16661fjsnca8f01b4b471",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        setgameInfo(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+   (async () => {
+      const game = await fetchGameDetail(id);
+      setgameInfo(game);
+    })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -59,7 +46,7 @@ export const GameDetail = () => {
             <Carousel centerSlidePercentage={100} centerMode>
                   {gameInfo.screenshots.map((shot, index) => (
                      <div key={index}>
-                        <img src={shot.image} alt="Image" />
+                        <img src={shot.image} alt="descrição da foto" />
                      </div>
                   ))}
             </Carousel>
@@ -88,7 +75,7 @@ export const GameDetail = () => {
                <h5>Espaço em Disco</h5>
                <p>{gameInfo.minimum_system_requirements.storage}</p>
             </div>
-          <GameForm />
+          <GameForm id={id}/>
           </GameInfoStyle>
          
         </section>
