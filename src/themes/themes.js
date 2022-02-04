@@ -1,14 +1,14 @@
 export const myTheme = {
   colors: {
     primary: {
-      light: '#e54848',
-      main: 'red',
-      dark: '#bd0303',
+      light: '#598392',
+      main: '#124559',
+      dark: '#01161e',
     },
     secondary: {
-      light: '#e2e281',
-      main: 'yellow',
-      dark: '#b0b007',
+      light: '#eff6e0',
+      main: '#e4f0d0',
+      dark: '#aec3b0',
     },
   },
 };
@@ -16,14 +16,14 @@ export const myTheme = {
 export const myThemeDark = {
   colors: {
     primary: {
-      light: '#e54848',
-      main: 'green',
-      dark: '#bd0303',
+      light: '#eff6e0',
+      main: '#e4f0d0',
+      dark: '#aec3b0',
     },
     secondary: {
-      light: '#e2e281',
-      main: 'yellow',
-      dark: '#b0b007',
+      light: '#598392',
+      main: '#124559',
+      dark: '#01161e',
     },
   },
 };

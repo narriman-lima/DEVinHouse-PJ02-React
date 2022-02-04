@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const GameCardStyle = styled.article`
-   ${({ primary, theme }) => ({
-      color: primary ? theme.colors.primary.main : theme.colors.secondary.main,
-      backgroundColor: primary ? theme.colors.secondary.main : theme.colors.primary.main,
+   ${({ theme }) => ({
+      color: theme.colors.primary.main,
+      backgroundColor: theme.colors.secondary.light,
    })}
    width: 250px;
    transition: all .2s ease-in-out;

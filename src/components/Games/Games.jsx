@@ -9,21 +9,46 @@ const GamesCardListWrapper = styled.section`
    gap: 15px;
    flex-wrap: wrap;
    margin: 0 auto;
-   max-width: 1050px
+   max-width: 1050px;
+   height: 100%;
+   min-height: 100vh;
 `;
+
+const HeaderContent = styled.div`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 24px 0;
+   max-width: 1050px;
+   margin: 0 auto;
+
+   h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: ${({theme}) => theme.colors.secondary.main};
+   }
+`;
+
+const NotFound = styled.p`
+   font-size: 24px;
+   color: ${({theme}) => theme.colors.secondary.main};
+`
 
 export const Games = () => {
     const { filteredGames } = useGame();
     
     return (
         <>
-            <h2>Games</h2>
-            <Search />
+            <HeaderContent>
+               <h2>Games</h2>
+               <Search />
+            </HeaderContent>
             <GamesCardListWrapper>
                 {filteredGames.length > 0 && filteredGames.map((game) => (
                     <GameCard key={game.id}  game={game}/>
                 ))}
-                {filteredGames.length === 0 && (<p>Nenhum jogo encontrado</p>)}
+                {filteredGames.length === 0 && (<NotFound>Nenhum jogo encontrado</NotFound>)}
             </GamesCardListWrapper>
         </>
     )
