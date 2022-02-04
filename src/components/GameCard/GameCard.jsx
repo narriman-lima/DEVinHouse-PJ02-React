@@ -28,12 +28,12 @@ const GameCardContent = styled.div`
 
  const StyledLink  = styled(Link)`
    padding: 10px 15px;
-   border: 1px solid black;
    margin: 20px auto 0;
    display: block;
    width: fit-content;
    text-decoration: none;
-   color: black;
+   color: ${({theme}) => theme.colors.secondary.main};
+   background-color: ${({theme}) => theme.colors.primary.main};
  `
 
 export const GameCard = (props) => { 

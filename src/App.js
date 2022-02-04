@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,15 +11,32 @@ import styled from 'styled-components';
 const MainStyle = styled.main`
    background-color: ${({theme}) => theme.colors.primary.dark};
 `
-
+const KEY_LOCALSTORAGE = "THEME";
 
 
 function App() {
    const [dark, setDark] = useState(false);
 
+   useEffect(() => {
+      const theme = localStorage.getItem(KEY_LOCALSTORAGE);
+      if (theme) {
+         setDark(checkTrue(theme));
+      } else {
+         localStorage.setItem(KEY_LOCALSTORAGE, dark);
+         setDark(false);
+      }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [])
+
    const setTheme = () => {
       setDark(!dark);
+      localStorage.setItem(KEY_LOCALSTORAGE, !dark)
    }
+
+   const checkTrue = (value) => {
+      return value === 'true';
+   }
+
   return (
     <>
       <ThemeProvider theme={dark ? myThemeDark : myTheme}>
