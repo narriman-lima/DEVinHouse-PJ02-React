@@ -7,9 +7,11 @@ import { Header } from './components/Header/Header';
 import { GlobalStyle } from './themes/GlobalStyles';
 import { myTheme, myThemeDark } from './themes/themes';
 import styled from 'styled-components';
+import { Footer } from './components/Footer/Footer';
 
 const MainStyle = styled.main`
    background-color: ${({theme}) => theme.colors.primary.dark};
+   margin-top: 78px;
 `
 const KEY_LOCALSTORAGE = "THEME";
 
@@ -46,6 +48,7 @@ function App() {
              <MainStyle>
                <Router />
              </MainStyle>
+             <Footer />
           </BrowserRouter>
     </ThemeProvider>
     </>

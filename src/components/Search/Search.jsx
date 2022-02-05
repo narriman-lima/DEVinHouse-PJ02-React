@@ -8,7 +8,7 @@ const CustomSearch = styled.input`
    border: none;
    padding: 4px;
    outline: none;
-   color: ${({theme}) => theme.colors.primary.dark};
+   color: ${({theme}) => theme.colors.secondary.main};
 `;
 
 export const Search = () => {

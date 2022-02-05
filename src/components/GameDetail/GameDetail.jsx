@@ -6,6 +6,17 @@ import styled from 'styled-components';
 import { GameForm } from "../Form/GameForm";
 import { fetchGameDetail } from "../../services/games-service";
 
+const GameDetailStyle = styled.section`
+   padding: 24px 24px;
+   color: ${({theme}) => theme.colors.secondary.main};
+
+   h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: ${({theme}) => theme.colors.secondary.main};
+   }
+`
+
 const CarouselWrapper = styled.div`
    width: 1050px;
    margin: 0 auto;
@@ -16,8 +27,42 @@ const GameInfoStyle = styled.div`
    h4, h5, p {
       padding-top: 10px;
    }
-   div {
-      border: solid 1px;
+   
+   .game__info {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+   }
+
+   .game__requirements {
+      margin: 0 auto;
+      max-width: 700px;
+      h4 {
+         text-align: center;
+         margin-bottom: 16px;
+      }
+
+      &-item {
+         display: flex;
+         border: 1px solid ${({theme}) => theme.colors.secondary.main};
+
+         &:not(:last-of-type) {
+            border-bottom: none;
+         }
+
+         h5 {
+            width: 40%;
+            padding: 10px 20px;
+            border-right: 1px solid ${({theme}) => theme.colors.secondary.main};
+            background-color: ${({theme}) => theme.colors.primary.light};
+         }
+
+         p {
+            width: 60%;
+            padding: 10px 20px;
+            background-color: ${({theme}) => theme.colors.primary.main};
+         }
+      }
    }
 
 `
@@ -38,7 +83,7 @@ export const GameDetail = () => {
   return (
     <>
       {gameInfo && (
-        <section>
+        <GameDetailStyle>
           <h1>
             {gameInfo.title} ({gameInfo.release_date})
           </h1>
@@ -53,32 +98,45 @@ export const GameDetail = () => {
           </CarouselWrapper>
 
           <GameInfoStyle>
-            <div>
-               <h4>Genre</h4>
-               <p>{gameInfo.genre}</p>
-               <h4>Platform</h4>
-               <p>{gameInfo.platform}</p>
+            <div className="game__info">
+               <div>
+                  <h4>Genre</h4>
+                  <p>{gameInfo.genre}</p>
+               </div>
+               <div>
+                  <h4>Platform</h4>
+                  <p>{gameInfo.platform}</p>
+               </div>
             </div>
             <h4>Descrição</h4>
             <p dangerouslySetInnerHTML={{ __html: gameInfo.description }}></p>
             <br></br>
-            <div>
+            <div className="game__requirements">
                <h4>Requisitos do Sitema</h4>
-               <h5>Sistema Operacional</h5>
-               <p>{gameInfo.minimum_system_requirements.os}</p>
-               <h5>Processador</h5>
-               <p>{gameInfo.minimum_system_requirements.processor}</p>
-               <h5>Memória</h5>
-               <p>{gameInfo.minimum_system_requirements.memory}</p>
-               <h5>Gráficos</h5>
-               <p>{gameInfo.minimum_system_requirements.graphics}</p>
-               <h5>Espaço em Disco</h5>
-               <p>{gameInfo.minimum_system_requirements.storage}</p>
+               <div className="game__requirements-item">
+                  <h5>Sistema Operacional</h5>
+                  <p>{gameInfo.minimum_system_requirements.os}</p>
+               </div>
+               <div className="game__requirements-item">
+                  <h5>Processador</h5>
+                  <p>{gameInfo.minimum_system_requirements.processor}</p>
+               </div>
+               <div className="game__requirements-item">
+                  <h5>Memória</h5>
+                  <p>{gameInfo.minimum_system_requirements.memory}</p>
+               </div>
+               <div className="game__requirements-item">
+                  <h5>Gráficos</h5>
+                  <p>{gameInfo.minimum_system_requirements.graphics}</p>
+               </div>
+               <div className="game__requirements-item">
+                  <h5>Espaço em Disco</h5>
+                  <p>{gameInfo.minimum_system_requirements.storage}</p>
+               </div>
             </div>
           <GameForm id={id}/>
           </GameInfoStyle>
-         
-        </section>
+        </GameDetailStyle>
       )}
       </>
   );

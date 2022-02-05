@@ -13,6 +13,50 @@ const Comments = styled.article`
 
 const FormWrapper = styled.aside`
   margin: 60px 0;
+
+  input {
+     padding: 10px 12px;
+     
+     &:not(:first-of-type) {
+       margin-top: 24px;
+     }
+  }
+
+  form {
+     display: flex;
+     flex-direction: column;
+  }
+
+  .form__user-data {
+     display: flex;
+     justify-content: space-between;
+     gap: 16px;
+     margin-bottom: 16px
+  }
+
+   .form__user-field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 60px;
+   }
+
+   .form__buttons {
+      display: flex;
+      margin-top: 16px;
+      justify-content: center;
+      gap: 24px;
+
+      button {
+         padding: 12px 16px;
+         border: none;
+         background-color: ${({theme}) => theme.colors.primary.light};
+         color: ${({theme}) => theme.colors.secondary.main};
+         font-size: 16px;
+         font-weight: bold;
+         text-transform: uppercase;
+      }
+   }
 `;
 
 const NameComment = styled.p`
@@ -32,7 +76,7 @@ const ArrowUp = styled.button`
   border: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 20px solid black;
+  border-bottom: 20px solid ${({theme}) => theme.colors.secondary.main};
   background-color: transparent;
   cursor: pointer;
 `;
@@ -42,7 +86,7 @@ const ArrowDown = styled.button`
   border: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 20px solid black;
+  border-top: 20px solid ${({theme}) => theme.colors.secondary.main};
   background-color: transparent;
   cursor: pointer;
 `;
@@ -140,34 +184,44 @@ export const GameForm = ({ id }) => {
       >
         {({ isSubmitting, resetForm, isValid }) => (
           <Form>
-            <Field name="nome" placeholder="Nome" />
-            <ErrorMessage
-              name="nome"
-              style={{ color: "red" }}
-              component="span"
-            />
+            <div className="form__user-data">
+               <div className="form__user-field">
+                  <Field name="nome" placeholder="Nome" />
+                  <ErrorMessage
+                  name="nome"
+                  style={{ color: "red" }}
+                  component="span"
+                  />
+               </div>
+               <div className="form__user-field">
+                  <Field name="email" placeholder="E-mail" />
+                  <ErrorMessage
+                  name="email"
+                  style={{ color: "red" }}
+                  component="span"
+                  />
+               </div>
+            </div>
 
-            <Field name="email" placeholder="E-mail" />
-            <ErrorMessage
-              name="email"
-              style={{ color: "red" }}
-              component="span"
-            />
+            <div className="form__user-field">
+               <Field name="comentario" placeholder="Comentário" />
+               <ErrorMessage
+               name="comentario"
+               style={{ color: "red" }}
+               component="span"
+               />
+            </div>
 
-            <Field name="comentario" placeholder="Comentário" />
-            <ErrorMessage
-              name="comentario"
-              style={{ color: "red" }}
-              component="span"
-            />
+            <div className="form__buttons">
+               <button type="submit" disabled={isSubmitting || !isValid}>
+               Enviar
+               </button>
 
-            <button type="submit" disabled={isSubmitting || !isValid}>
-              Enviar
-            </button>
+               <button type="button" disabled={isSubmitting} onClick={resetForm}>
+               Limpar
+               </button>
 
-            <button type="button" disabled={isSubmitting} onClick={resetForm}>
-              Limpar
-            </button>
+            </div>
           </Form>
         )}
       </Formik>

@@ -10,6 +10,16 @@ const HeaderStyle = styled.header`
       justify-content: space-between;
       align-items: center;
       padding: 14px 28px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1000;
+
+      a {
+         text-decoration: none;
+         color: ${({theme}) => theme.colors.secondary.main};
+      }
    `
 
 const HeaderList = styled.ul`
@@ -21,10 +31,19 @@ const HeaderList = styled.ul`
          margin-right: 10px;
       }
 
+      transition: all .2s ease-in-out;
+
+      &:hover {
+         transform: scale(1.1);
+      }
+
       a {
          color: ${({theme}) => theme.colors.secondary.main};
          text-decoration: none;
          padding: 5px;
+         font-weight: bold;
+         font-size: 18px;
+
       }
    }
 `
@@ -57,11 +76,11 @@ export const Header = ({setTheme}) => {
     return (
        <HeaderStyle>
          
-         <h1><i className="fas fa-gamepad head__icon"></i>DEVinMMO</h1>
+         <Link to={``}><h1><i className="fas fa-gamepad head__icon"></i>DEVinMMO</h1></Link>
          <NavWrapper>
             <nav>
                <HeaderList>
-                  <li><Link to={``}>Início</Link></li>
+                  <li><Link to={``}>Games</Link></li>
                   <li><Link to={`noticias`}>Notícias</Link></li>
                </HeaderList>
             </nav>
