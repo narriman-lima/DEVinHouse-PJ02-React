@@ -4,7 +4,7 @@ O projeto foi um desafio feito individualmente utilizando o<strong>React</strong
 ● busca de jogos;<br>
 ● informações detalhadas sobre cada jogo, como os requisitos mínimos;<br>
 ● página de busca de notícias relacionadas aos jogos, que também redireciona para o site de origem da notícia.<br><br>
-Foi necessário criar uma aplicação contemplando os seguintes requisitos:<br><br>
+A aplicação foi feita contemplando os seguintes requisitos:<br><br>
 
 ● Utilizar o serviço de MMO Games: https://rapidapi.com/digiwalls/api/mmo-games/;</br>
 ● Uma página com todos os resultados fazendo uma listagem utilizando o endpoint https://mmo-games.p.rapidapi.com/games;<br>
