@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+<strong>2º Projeto Avaliativo do 1º Módulo do curso DEVinHouse - DEVinMMO</strong>
+<br><hr><br>
+O projeto foi um desafio feito individualmente utilizando o<strong>React</strong>, tratando-se de uma página de jogos MMO (Massively Multiplayer Online), que permite:<br>
+● busca de jogos;<br>
+● informações detalhadas sobre cada jogo, como os requisitos mínimos;<br>
+● página de busca de notícias relacionadas aos jogos, que também redireciona para o site de origem da notícia.<br><br>
+Foi necessário criar uma aplicação contemplando os seguintes requisitos:<br><br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+● Utilizar o serviço de MMO Games: https://rapidapi.com/digiwalls/api/mmo-games/;</br>
+● Uma página com todos os resultados fazendo uma listagem utilizando o endpoint https://mmo-games.p.rapidapi.com/games;<br>
+● Uma página com detalhe do jogo utilizando o endpoint https://mmo-games.p.rapidapi.com/game;<br>
+● Uma página de notícia, com as informações de acordo com as imagens utilizando o endpoint https://mmo-games.p.rapidapi.com/latestnews;<br>
+● Na página de detalhes, fazer um formulário para inserir comentários que devem ser salvos no localStorage;<br>
+● Os campos do formulário não podem ser salvos em branco e o e-mail precisa ser um e-mail válido;<br>
+● Na página de detalhes, fazer um slideshow com as fotos das screenshots (não precisa ter troca automática de fotos, mas precisa trocar ao clicar em uma foto);<br>
+● Inserir input de busca na tela de listagem de jogos e de notícias, que realiza um filtro e atualiza a listagem com os resultados por nome do jogo/ título da notícia, conforme telas das imagens;<br>
+● Nos cards de notícia, o link deve direcionar o usuário para uma nova aba do navegador, onde será aberto o site da notícia;<br>
+● Utilizar rotas na aplicação para navegar entre página de detalhes, listagem de jogos e listagem de notícias;<br>
+● Utilizar a fonte Montserrat do Google Fonts - https://fonts.google.com/specimen/Montserrat?query=Montserrat;<br>
+● Utilizar, sempre que possível, tags semânticas para os elementos HTML.<br>
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
