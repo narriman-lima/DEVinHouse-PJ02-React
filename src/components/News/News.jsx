@@ -13,7 +13,7 @@ const NewsStyle = styled.section`
    h1 {
       margin-bottom: 20px;
       font-size: 32px;
-      color: ${({theme}) => theme.colors.secondary.main};
+      color: ${({theme}) => theme.colors.primary.title};
       text-align: center;
    }
 
@@ -32,12 +32,12 @@ const NewsStyle = styled.section`
 
 const NotFound = styled.p`
    font-size: 24px;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.text};
 `
 
 const NewsTotal = styled.p`
    font-size: 24px;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.text};
    margin-bottom: 20px;
 `
 

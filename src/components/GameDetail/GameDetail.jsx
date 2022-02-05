@@ -8,12 +8,12 @@ import { fetchGameDetail } from "../../services/games-service";
 
 const GameDetailStyle = styled.section`
    padding: 24px 24px;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.text};
 
    h1 {
       margin-bottom: 20px;
       text-align: center;
-      color: ${({theme}) => theme.colors.secondary.main};
+      color: ${({theme}) => theme.colors.primary.text};
    }
 `
 
@@ -44,7 +44,7 @@ const GameInfoStyle = styled.div`
 
       &-item {
          display: flex;
-         border: 1px solid ${({theme}) => theme.colors.secondary.main};
+         border: 1px solid ${({theme}) => theme.colors.secondary.dark};
 
          &:not(:last-of-type) {
             border-bottom: none;
@@ -53,14 +53,15 @@ const GameInfoStyle = styled.div`
          h5 {
             width: 40%;
             padding: 10px 20px;
-            border-right: 1px solid ${({theme}) => theme.colors.secondary.main};
-            background-color: ${({theme}) => theme.colors.primary.light};
+            border-right: 1px solid ${({theme}) => theme.colors.secondary.dark};
+            background-color: ${({theme}) => theme.colors.secondary.light};
          }
 
          p {
             width: 60%;
             padding: 10px 20px;
             background-color: ${({theme}) => theme.colors.primary.main};
+            color: ${({theme}) => theme.colors.secondary.text};
          }
       }
    }
@@ -91,7 +92,7 @@ export const GameDetail = () => {
             <Carousel centerSlidePercentage={100} centerMode>
                   {gameInfo.screenshots.map((shot, index) => (
                      <div key={index}>
-                        <img src={shot.image} alt="descrição da foto" />
+                        <img src={shot.image} alt="description of the img" />
                      </div>
                   ))}
             </Carousel>

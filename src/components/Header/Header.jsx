@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HeaderStyle = styled.header`
    ${({ theme }) => ({
-      color: theme.colors.secondary.main,
+      color: theme.colors.primary.main,
       backgroundColor: theme.colors.primary.main,
    })}
       display: flex;
@@ -18,7 +18,7 @@ const HeaderStyle = styled.header`
 
       a {
          text-decoration: none;
-         color: ${({theme}) => theme.colors.secondary.main};
+         color: ${({theme}) => theme.colors.primary.header_footer};
       }
    `
 
@@ -38,7 +38,7 @@ const HeaderList = styled.ul`
       }
 
       a {
-         color: ${({theme}) => theme.colors.secondary.main};
+         color: ${({theme}) => theme.colors.primary.header_footer};
          text-decoration: none;
          padding: 5px;
          font-weight: bold;
@@ -59,7 +59,7 @@ const NavWrapper = styled.div`
 `
 
 const ButtonThemeSwitcher = styled.button`
-   background-color: ${({theme}) => theme.colors.secondary.main};
+   background-color: ${({theme}) => theme.colors.primary.header_footer};
    border: none;
    padding: 10px;
    width: 50px;

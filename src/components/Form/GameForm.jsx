@@ -51,11 +51,10 @@ const FormWrapper = styled.aside`
          padding: 10px 14px;
          border: none;
          background-color: ${({theme}) => theme.colors.primary.main};
-         color: ${({theme}) => theme.colors.secondary.main};
          font-size: 16px;
          font-weight: bold;
          text-transform: uppercase;
-         color: ${({theme}) => theme.colors.secondary.main};
+         color: ${({theme}) => theme.colors.primary.highlight};
          text-decoration: none;
          width: fit-content;
          white-space: nowrap;
@@ -85,7 +84,7 @@ const ArrowUp = styled.button`
   border: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 20px solid ${({theme}) => theme.colors.secondary.main};
+  border-bottom: 20px solid ${({theme}) => theme.colors.primary.arrowUp};
   background-color: transparent;
   cursor: pointer;
 `;
@@ -95,7 +94,7 @@ const ArrowDown = styled.button`
   border: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 20px solid ${({theme}) => theme.colors.secondary.main};
+  border-top: 20px solid ${({theme}) => theme.colors.primary.arrowDown};
   background-color: transparent;
   cursor: pointer;
 `;

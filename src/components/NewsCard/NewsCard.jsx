@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const NewsCardStyle = styled.article`
    ${({ theme }) => ({
-      color: theme.colors.primary.main,
+      color: theme.colors.primary.text,
       backgroundColor: theme.colors.secondary.light,
    })}
 
@@ -10,15 +10,18 @@ const NewsCardStyle = styled.article`
    gap: 24px;
    align-items: center;
    padding: 16px;
-   border: 1px solid black;
    margin-bottom: 24px;
-   border-radius: 10px;
+   border-radius: 0 30px 0 30px;
+   box-shadow: 4px 4px 5px ${({theme}) => theme.colors.primary.boxshadow};
+
+   
 
    &:hover {
       transform: scale(1.050);
+      box-shadow: 5px 5px 10px ${({theme}) => theme.colors.primary.boxshadow};
+      transition: all .3s ease-in-out;
    }
 
-   transition: all .2s ease-in-out;
 
    img{
       width: 300px;
@@ -34,7 +37,7 @@ const NewsCardStyle = styled.article`
    `
 
 const NewsCardButton = styled.a`
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.highlight};
    text-decoration: none;
    font-size: 16px;
    text-transform: uppercase;

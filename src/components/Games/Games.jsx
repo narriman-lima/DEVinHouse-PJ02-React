@@ -26,17 +26,17 @@ const HeaderContent = styled.div`
    h2 {
       margin-bottom: 20px;
       font-size: 32px;
-      color: ${({theme}) => theme.colors.secondary.main};
+      color: ${({theme}) => theme.colors.primary.title};
    }
 `;
 
 const NotFound = styled.p`
    font-size: 24px;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.text};
 `
 const GamesTotal = styled.p`
    font-size: 24px;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.text};
    margin: 0 0 20px 235px;
 `
 
@@ -49,7 +49,8 @@ export const Games = () => {
                <h2>Games</h2>
                <Search />
             </HeaderContent>
-            {filteredGames.length > 0 && (<GamesTotal>{filteredGames.length} news found</GamesTotal>)}
+            {filteredGames.length === 1 && (<GamesTotal>{filteredGames.length} game found</GamesTotal>)}
+            {filteredGames.length > 1 && (<GamesTotal>{filteredGames.length} games found</GamesTotal>)}
             <GamesCardListWrapper>
                 {filteredGames.length > 0 && filteredGames.map((game) => (
                     <GameCard key={game.id}  game={game}/>

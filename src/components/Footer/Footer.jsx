@@ -9,11 +9,15 @@ const FooterStyle = styled.footer`
    justify-content: space-between;
    align-items: center;
    padding: 10px 28px;
-   color: ${({theme}) => theme.colors.secondary.main};
-
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   
+   color: ${({theme}) => theme.colors.primary.header_footer};
    a {
       font-size: 36px;
-      color: ${({theme}) => theme.colors.secondary.main};
+      color: ${({theme}) => theme.colors.primary.header_footer};
    }
 
 `
@@ -24,7 +28,7 @@ export const Footer = () => {
    return (
       <FooterStyle>
          <div>
-            Copyright © {year} - Narriman Lima
+            Site desenvolvido por <strong>Narriman Lima</strong> 👩🏻‍💻
          </div>
          <div>
             <a href="https://github.com/narriman-lima/DEVinHouse-PJ02-React" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
