@@ -6,14 +6,17 @@ const GameCardStyle = styled.article`
       color: theme.colors.primary.main,
       backgroundColor: theme.colors.secondary.light,
    })}
-   width: 250px;
+
+   width: 340px;
    transition: all .2s ease-in-out;
+   border-radius: 10px;
 
    &:hover {
-      transform: scale(1.1);
+      transform: scale(1.050);
    }
    img{
-      width: 250px;
+      width: 340px;
+      border-radius: 10px 10px 0 0;
    }
    p {
       display: -webkit-box;
@@ -37,6 +40,11 @@ const GameCardContent = styled.div`
    font-weight: bold;
    font-size: 14px;
    text-transform: uppercase;
+   border-radius: 15px;
+   &:hover {
+      transform: scale(1.050);
+   }
+   transition: all .2s ease-in-out;
  `
 
 export const GameCard = (props) => { 
@@ -48,7 +56,7 @@ export const GameCard = (props) => {
                <h3>{title}</h3>
                <span>{platform}</span>
                <p>{short_description}</p>
-               <StyledLink  to={`game/detail/${id}`}>Ver mais</StyledLink>
+               <StyledLink  to={`game/detail/${id}`}>See more</StyledLink>
             </GameCardContent>
         </GameCardStyle>
     )

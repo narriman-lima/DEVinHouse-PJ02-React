@@ -35,6 +35,12 @@ const NotFound = styled.p`
    color: ${({theme}) => theme.colors.secondary.main};
 `
 
+const NewsTotal = styled.p`
+   font-size: 24px;
+   color: ${({theme}) => theme.colors.secondary.main};
+   margin-bottom: 20px;
+`
+
 export const News = () => {
     const [news, setNews] = useState([]);
     const [filteredNews, setFilteredNews] = useState([]);
@@ -61,12 +67,13 @@ export const News = () => {
                   setFilter(event.target.value);
                }}
                type="text"
-               placeholder="Digite o nome do jogo"
+               placeholder="Search game news"
                />
+                {filteredNews.length > 0 && (<NewsTotal>{filteredNews.length} news found</NewsTotal>)}
                 {filteredNews.length > 0 && filteredNews.map(notice => (
                     <NewsCard key={notice.id} notice={notice} />
                 ))}
-                {filteredNews.length === 0 && (<NotFound>Nenhuma notícia encontrada</NotFound>)}
+                {filteredNews.length === 0 && (<NotFound>No news found</NotFound>)}
             </NewsStyle>
         </>
     )

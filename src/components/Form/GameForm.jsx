@@ -48,13 +48,22 @@ const FormWrapper = styled.aside`
       gap: 24px;
 
       button {
-         padding: 12px 16px;
+         padding: 10px 14px;
          border: none;
-         background-color: ${({theme}) => theme.colors.primary.light};
+         background-color: ${({theme}) => theme.colors.primary.main};
          color: ${({theme}) => theme.colors.secondary.main};
          font-size: 16px;
          font-weight: bold;
          text-transform: uppercase;
+         color: ${({theme}) => theme.colors.secondary.main};
+         text-decoration: none;
+         width: fit-content;
+         white-space: nowrap;
+         border-radius: 15px;
+         &:hover {
+            transform: scale(1.050);
+         transition: all .2s ease-in-out;
+         cursor: pointer;
       }
    }
 `;
@@ -161,9 +170,9 @@ export const GameForm = ({ id }) => {
   };
 
   const schema = Yup.object().shape({
-    nome: Yup.string().required("Campo obrigatório"),
-    email: Yup.string().required("Campo obrigatório").email("E-mail inválido"),
-    comentario: Yup.string().required("Campo obrigatório"),
+    nome: Yup.string().required("Name is required"),
+    email: Yup.string().required("E-mail is required").email("Invalid e-mail"),
+    comentario: Yup.string().required("Comment is required"),
   });
 
   const initialValues = {
@@ -174,7 +183,7 @@ export const GameForm = ({ id }) => {
 
   return (
     <FormWrapper>
-      <h1>Comentários</h1>
+      <h1>Comments about the game</h1>
 
       <Formik
         initialValues={initialValues}
@@ -186,7 +195,7 @@ export const GameForm = ({ id }) => {
           <Form>
             <div className="form__user-data">
                <div className="form__user-field">
-                  <Field name="nome" placeholder="Nome" />
+                  <Field name="name" placeholder="Name" />
                   <ErrorMessage
                   name="nome"
                   style={{ color: "red" }}
@@ -204,7 +213,7 @@ export const GameForm = ({ id }) => {
             </div>
 
             <div className="form__user-field">
-               <Field name="comentario" placeholder="Comentário" />
+               <Field name="comentario" placeholder="Comment" />
                <ErrorMessage
                name="comentario"
                style={{ color: "red" }}
@@ -214,11 +223,11 @@ export const GameForm = ({ id }) => {
 
             <div className="form__buttons">
                <button type="submit" disabled={isSubmitting || !isValid}>
-               Enviar
+               Submit
                </button>
 
                <button type="button" disabled={isSubmitting} onClick={resetForm}>
-               Limpar
+               Reset
                </button>
 
             </div>
@@ -229,13 +238,13 @@ export const GameForm = ({ id }) => {
       <section>
         <Comments>
           <NameComment>
-            <strong>Nome</strong>
+            <strong>Name</strong>
           </NameComment>
           <TextComment>
-            <strong>Comentário</strong>
+            <strong>Comment</strong>
           </TextComment>
           <RateComment>
-            <strong>Voto</strong>
+            <strong>Vote</strong>
           </RateComment>
         </Comments>
         {gameComment?.comentarios?.map((item) => (

@@ -20,7 +20,7 @@ export const Search = () => {
          setFilter(event.target.value);
         }}
         type="text"
-        placeholder="Digite o nome do jogo"
+        placeholder="Search game"
       />
    )
 }

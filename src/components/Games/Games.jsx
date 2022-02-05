@@ -34,6 +34,11 @@ const NotFound = styled.p`
    font-size: 24px;
    color: ${({theme}) => theme.colors.secondary.main};
 `
+const GamesTotal = styled.p`
+   font-size: 24px;
+   color: ${({theme}) => theme.colors.secondary.main};
+   margin: 0 0 20px 235px;
+`
 
 export const Games = () => {
     const { filteredGames } = useGame();
@@ -44,11 +49,12 @@ export const Games = () => {
                <h2>Games</h2>
                <Search />
             </HeaderContent>
+            {filteredGames.length > 0 && (<GamesTotal>{filteredGames.length} news found</GamesTotal>)}
             <GamesCardListWrapper>
                 {filteredGames.length > 0 && filteredGames.map((game) => (
                     <GameCard key={game.id}  game={game}/>
                 ))}
-                {filteredGames.length === 0 && (<NotFound>Nenhum jogo encontrado</NotFound>)}
+                {filteredGames.length === 0 && (<NotFound>No games found</NotFound>)}
             </GamesCardListWrapper>
         </>
     )

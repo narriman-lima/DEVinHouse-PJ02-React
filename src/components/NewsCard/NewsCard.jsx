@@ -12,6 +12,13 @@ const NewsCardStyle = styled.article`
    padding: 16px;
    border: 1px solid black;
    margin-bottom: 24px;
+   border-radius: 10px;
+
+   &:hover {
+      transform: scale(1.050);
+   }
+
+   transition: all .2s ease-in-out;
 
    img{
       width: 300px;
@@ -36,6 +43,11 @@ const NewsCardButton = styled.a`
    background-color: ${({theme}) => theme.colors.primary.main};
    width: fit-content;
    white-space: nowrap;
+   border-radius: 15px;
+   &:hover {
+      transform: scale(1.050);
+   transition: all .2s ease-in-out;
+
 `
 
 export const NewsCard = (props) => {
@@ -49,7 +61,7 @@ export const NewsCard = (props) => {
                   <h3>{title}</h3>
                   <p>{short_description}</p>
                </div>
-               <NewsCardButton href={article_url} target="_blank" rel="noopener noreferrer">Ver no site</NewsCardButton>
+               <NewsCardButton href={article_url} target="_blank" rel="noopener noreferrer">Read more</NewsCardButton>
            </NewsCardStyle>
        </>
    )

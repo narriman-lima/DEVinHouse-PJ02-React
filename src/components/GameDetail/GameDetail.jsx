@@ -112,25 +112,25 @@ export const GameDetail = () => {
             <p dangerouslySetInnerHTML={{ __html: gameInfo.description }}></p>
             <br></br>
             <div className="game__requirements">
-               <h4>Requisitos do Sitema</h4>
+               <h4>System requirements</h4>
                <div className="game__requirements-item">
-                  <h5>Sistema Operacional</h5>
+                  <h5>OS</h5>
                   <p>{gameInfo.minimum_system_requirements.os}</p>
                </div>
                <div className="game__requirements-item">
-                  <h5>Processador</h5>
+                  <h5>Processor</h5>
                   <p>{gameInfo.minimum_system_requirements.processor}</p>
                </div>
                <div className="game__requirements-item">
-                  <h5>Memória</h5>
+                  <h5>Memory</h5>
                   <p>{gameInfo.minimum_system_requirements.memory}</p>
                </div>
                <div className="game__requirements-item">
-                  <h5>Gráficos</h5>
+                  <h5>Graphics</h5>
                   <p>{gameInfo.minimum_system_requirements.graphics}</p>
                </div>
                <div className="game__requirements-item">
-                  <h5>Espaço em Disco</h5>
+                  <h5>Storage</h5>
                   <p>{gameInfo.minimum_system_requirements.storage}</p>
                </div>
             </div>

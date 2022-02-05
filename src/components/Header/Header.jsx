@@ -81,7 +81,7 @@ export const Header = ({setTheme}) => {
             <nav>
                <HeaderList>
                   <li><Link to={``}>Games</Link></li>
-                  <li><Link to={`noticias`}>Notícias</Link></li>
+                  <li><Link to={`noticias`}>News</Link></li>
                </HeaderList>
             </nav>
             <ButtonThemeSwitcher onClick={setTheme}><i className="far fa-lightbulb"></i></ButtonThemeSwitcher>
