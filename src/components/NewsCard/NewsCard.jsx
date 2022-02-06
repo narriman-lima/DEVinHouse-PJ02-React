@@ -19,6 +19,9 @@ const NewsCardStyle = styled.article`
    &:hover {
       transform: scale(1.050);
       box-shadow: 5px 5px 10px ${({theme}) => theme.colors.primary.boxshadow};
+      background: linear-gradient(-45deg, ${({theme}) => theme.colors.primary.newsBg3},${({theme}) => theme.colors.primary.newsBg2}, ${({theme}) => theme.colors.primary.newsBg1});
+      background-size: 400% 400%;
+      animation: gradient 3s ease infinite;
       transition: all .3s ease-in-out;
    }
 
@@ -31,6 +34,18 @@ const NewsCardStyle = styled.article`
       width: 100%;
       h3 {
          margin-bottom: 20px;
+      }
+   }
+
+   @keyframes gradient {
+      0% {
+         background-position: 0% 50%;
+      }
+      50% {
+         background-position: 100% 50%;
+      }
+      100% {
+         background-position: 0% 50%;
       }
    }
 

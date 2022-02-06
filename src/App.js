@@ -12,6 +12,7 @@ import { Footer } from './components/Footer/Footer';
 const MainStyle = styled.main`
    background-color: ${({theme}) => theme.colors.primary.light};
    margin-top: 78px;
+   margin-bottom: 63px;
 `
 const KEY_LOCALSTORAGE = "THEME";
 

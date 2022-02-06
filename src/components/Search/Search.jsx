@@ -5,10 +5,12 @@ const CustomSearch = styled.input`
    font-size: 20px;
    line-height: 24px;
    width: 100%;
-   border: none;
    padding: 4px;
    outline: none;
-   color: ${({theme}) => theme.colors.secondary.main};
+   color: ${({theme}) => theme.colors.primary.main};
+   background-color: ${({theme}) => theme.colors.primary.search};
+   border: 1px solid ${({theme}) => theme.colors.primary.main};
+   border-radius: 5px;
 `;
 
 export const Search = () => {

@@ -11,6 +11,10 @@ export const myTheme = {
       highlight: '#06aed5',
       arrowDown: 'red',
       arrowUp: 'green',
+      search: "#ffffff",
+      newsBg1: "#e9ecef",
+      newsBg2: "#dee2e6",
+      newsBg3: "#adb5bd",
     },
     secondary: {
       light: '#ffffff',
@@ -34,12 +38,16 @@ export const myThemeDark = {
       highlight: '#f3f5f7',
       arrowDown: 'red',
       arrowUp: 'green',
+      newsBg1: "#495057",
+      newsBg2: "#343a40",
+      newsBg3: "#212529",
     },
     secondary: {
       light: '#25292d',
       main: '#121416',
       dark: '#292929',
       text: '#ffffff',
+      
     },
   },
 };

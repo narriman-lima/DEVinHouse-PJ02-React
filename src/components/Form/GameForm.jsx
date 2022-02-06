@@ -16,7 +16,11 @@ const FormWrapper = styled.aside`
 
   input {
      padding: 10px 12px;
-     
+     color: ${({theme}) => theme.colors.primary.main};
+     background-color: ${({theme}) => theme.colors.primary.search};
+     border: 1px solid ${({theme}) => theme.colors.primary.main};
+     border-radius: 5px;
+     font-size: 16px;
      &:not(:first-of-type) {
        margin-top: 24px;
      }
@@ -169,13 +173,13 @@ export const GameForm = ({ id }) => {
   };
 
   const schema = Yup.object().shape({
-    nome: Yup.string().required("Name is required"),
+    name: Yup.string().required("Name is required"),
     email: Yup.string().required("E-mail is required").email("Invalid e-mail"),
     comentario: Yup.string().required("Comment is required"),
   });
 
   const initialValues = {
-    nome: "",
+    name: "",
     email: "",
     comentario: "",
   };
@@ -196,7 +200,7 @@ export const GameForm = ({ id }) => {
                <div className="form__user-field">
                   <Field name="name" placeholder="Name" />
                   <ErrorMessage
-                  name="nome"
+                  name="name"
                   style={{ color: "red" }}
                   component="span"
                   />
@@ -248,7 +252,7 @@ export const GameForm = ({ id }) => {
         </Comments>
         {gameComment?.comentarios?.map((item) => (
           <Comments key={item.id}>
-            <NameComment>{item.nome}</NameComment>
+            <NameComment>{item.name}</NameComment>
             <TextComment>{item.comentario}</TextComment>
             <RateComment>
               <ArrowUp onClick={() => setComentRate(item.id, 1)} />

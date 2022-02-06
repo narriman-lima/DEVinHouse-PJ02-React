@@ -23,12 +23,10 @@ const FooterStyle = styled.footer`
 `
 
 export const Footer = () => {
-   const year = new Date().getFullYear();
-
    return (
       <FooterStyle>
          <div>
-            Site desenvolvido por <strong>Narriman Lima</strong> 👩🏻‍💻
+         Website developed by <strong>Narriman Lima</strong> 👩🏻‍💻
          </div>
          <div>
             <a href="https://github.com/narriman-lima/DEVinHouse-PJ02-React" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>

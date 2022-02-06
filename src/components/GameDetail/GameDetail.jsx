@@ -20,7 +20,13 @@ const GameDetailStyle = styled.section`
 const CarouselWrapper = styled.div`
    width: 1050px;
    margin: 0 auto;
+   cursor: pointer;
+
+   img {
+      border-radius: 8px;
+   }
 `
+
 const GameInfoStyle = styled.div`
    width: 1050px;
    margin: 0 auto;
@@ -86,7 +92,7 @@ export const GameDetail = () => {
       {gameInfo && (
         <GameDetailStyle>
           <h1>
-            {gameInfo.title} ({gameInfo.release_date})
+            {gameInfo.title}
           </h1>
           <CarouselWrapper>
             <Carousel centerSlidePercentage={100} centerMode>
@@ -108,8 +114,12 @@ export const GameDetail = () => {
                   <h4>Platform</h4>
                   <p>{gameInfo.platform}</p>
                </div>
+               <div>
+                  <h4>Release Date</h4>
+                  <p>{gameInfo.release_date}</p>               
+               </div>
             </div>
-            <h4>Descrição</h4>
+            <h4>Description</h4>
             <p dangerouslySetInnerHTML={{ __html: gameInfo.description }}></p>
             <br></br>
             <div className="game__requirements">

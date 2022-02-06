@@ -1,9 +1,9 @@
-<strong>2º Projeto Avaliativo do 1º Módulo do curso DEVinHouse - DEVinMMO</strong>
+<strong>2º Projeto Avaliativo do 1º Módulo do curso DEVinHouse - DEVinMMO 👩🏻‍💻</strong>
 <br><hr>
-O projeto foi um desafio feito individualmente utilizando o<strong>React</strong>, tratando-se de uma página de jogos MMO (Massively Multiplayer Online), que permite:<br><br>
-● busca de jogos;<br>
-● informações detalhadas sobre cada jogo, como os requisitos mínimos;<br>
-● página de busca de notícias relacionadas aos jogos, que também redireciona para o site de origem da notícia.<br><br>
+O projeto foi um desafio feito individualmente utilizando o <strong>React</strong>, tratando-se de uma página de jogos MMO (Massively Multiplayer Online), que permite:<br><br>
+🎮 busca de jogos;<br>
+💻 informações detalhadas sobre cada jogo, como os requisitos mínimos;<br>
+📰 página de busca de notícias relacionadas aos jogos, que também redireciona para o site de origem da notícia.<br><br>
 A aplicação foi feita contemplando os seguintes requisitos:<br><br>
 
 ● Utilizar o serviço de MMO Games: https://rapidapi.com/digiwalls/api/mmo-games/;</br>
